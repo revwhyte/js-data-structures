@@ -6,12 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="Node.js"></script>
-    <script src="List.js"></script>
-    <script src="Queue.js"></script>
-    <script src="Stack.js"></script>
+    <script src="TreeNode.js"></script>
+    <script src="Tree.js"></script>
     <script>
-        
+        let nd1 = new TreeNode(2)
+        let nd2 = new TreeNode(3)
+
+        let tree = new Tree()
+        tree.seed(nd2)
+        console.log(tree)
+
+        tree.plant(nd1)
+        console.log(tree)
     </script>
 </body>
 </html>

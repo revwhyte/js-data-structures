@@ -1,16 +1,15 @@
-class Queue {
+class QueueList extends AbstractList{
     constructor() {
-        this.start = null
+        super()
         this.end = null
-        this.size = 0
     }
 
     peek() {
-        return this.start.value
+        return super.getHead()
     }
 
     getLast() {
-        return this.end
+        return this.end.value
     }
 
     getSize() {
@@ -21,22 +20,21 @@ class Queue {
         return this.size == 0
     }
 
-
     enqueueFirst(queueNode) {
-        this.start = queueNode
+        super.head = queueNode
         this.end = queueNode
-        this.size++
+        super.size++
     }
 
     enqueue(qNode) {
         let newNode = qNode
         this.end.nextNode = newNode
         this.end = newNode
-        this.size++
+        super.size++
     }
 
     dequeue() {
-        this.start = this.start.nextNode
+        super.head = super.head.nextNode
         this.size--
     }
 }

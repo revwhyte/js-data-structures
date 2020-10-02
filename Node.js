@@ -5,7 +5,6 @@ class Node {
     }
 
     getValue() { return this.value }
-    setValue(newValue) { this.value = newValue }
     getNextNode() { return this.nextNode }
-    setNextNode(nextNode) { this.nextNode = nextNode }
+    getNextNodeValue() { return this.nextNode.value }
 }
