@@ -18,13 +18,11 @@ class Tree {
             // seed value is lower than current node
             if(tn.getValue() <= rt.getValue()) {
                 // go down in tree by left
-                console.log('lower')
                 rt = rt.getLeftNode()
             }
             // seed value is higher than current node
             else {
                 // go down in tree by right
-                console.log('higher')
                 rt = rt.getRightNode()
             }
         }
