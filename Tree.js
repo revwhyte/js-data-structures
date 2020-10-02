@@ -4,6 +4,8 @@ class Tree {
         this.root = null
     }
 
+    getRoot() { return this.root }
+
     seed(tNode) {
         let tn = tNode
         this.root = tn
@@ -38,19 +40,48 @@ class Tree {
 
     getLowestSeed() {
         // concept: lowest seed is the leftmost seed
-        let lms = this.root.getLeft()
+        let lms = this.root, aux = null
         while(lms) {
-            lms = lms.getLeft()
+            aux = lms
+            lms = lms.getLeftNode()
         }
-        console.log(lms.getValue())
+        console.log(aux.getValue())
     }
 
     getHighestSeed() {
         // concept: highest seed is the rightmost seed
-        let rms = this.root.getRight()
+        let rms = this.root, aux = null
         while(rms) {
-            rms = rms.getRight()
+            aux = rms
+            rms = rms.getRightNode()
         }
-        console.log(rms.getValue())
+        console.log(aux.getValue())
+    }
+
+    static preOrder(tree) {
+        let nd = tree
+        if(nd) {
+            console.log(nd.getValue())
+            this.preOrder(nd.getLeftNode())
+            this.preOrder(nd.getRightNode())
+        }
+    }
+
+    static inOrder(tree) {
+        let nd = tree
+        if(nd) {
+            this.inOrder(nd.getLeftNode())
+            console.log(nd.getValue())
+            this.inOrder(nd.getRightNode())
+        }
+    }
+
+    static postOrder(tree) {
+        let nd = tree
+        if(nd) {
+            this.postOrder(nd.getLeftNode())
+            this.postOrder(nd.getRightNode())
+            console.log(nd.getValue())
+        }
     }
 }

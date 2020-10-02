@@ -13,7 +13,4 @@ class TreeNode {
 
     getRightNode() { return this.right }
     setRightNode(tNode) { this.right = tNode }
-
-    getRight() { return this.right.value }
-    getLeft() { return this.left.value }
 }
